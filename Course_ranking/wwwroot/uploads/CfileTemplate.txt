@@ -1,0 +1,3 @@
+﻿int x;
+int y=7;
+int sum=x+y;

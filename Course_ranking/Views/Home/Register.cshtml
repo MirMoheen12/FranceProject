@@ -1,0 +1,58 @@
+﻿@model Course_ranking.Models.AllUsers
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="offset-3 col-md-5" style="background-color:white">
+        <br />
+        <br />
+        <form method="post" asp-action="Register" asp-controller="Home">
+            <div class="row">
+                <div class="col-6">
+                    <input asp-for="firstname" type="text" id="form2Example1" required class="form-control" />
+                <label class="form-label" for="form2Example1">First Name</label>
+                </div>
+                  <div class="col-6">
+                    <input type="text" asp-for="lastname" id="form2Example1" required class="form-control" />
+                <label class="form-label" for="form2Example1">Last Name</label>
+                </div>
+            </div>
+ 
+            <div class="form-outline mb-2">
+                <input type="email" asp-for="useremail" id="form2Example1" required class="form-control" />
+                <label class="form-label" for="form2Example1">Email address</label>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+                <input type="password" asp-for="userePassword" id="form2Example2" required class="form-control" />
+                <label class="form-label" for="form2Example2">Password</label>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <input type="text" asp-for="city" id="form2Example1" required class="form-control" />
+                    <label class="form-label" for="form2Example1">City</label>
+                </div>
+                <div class="col-4">
+                    <input type="text" asp-for="userstate" id="form2Example1" required class="form-control" />
+                    <label class="form-label" for="form2Example1">State</label>
+                </div>
+                <div class="col-4">
+                    <input type="text" asp-for="zip" id="form2Example1" required class="form-control" />
+                    <label class="form-label" for="form2Example1">Zip</label>
+                </div>
+            </div>
+            <!-- 2 column grid layout for inline styling -->
+        
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+
+            <!-- Register buttons -->
+    
+        </form>
+    </div>
+</div>
+

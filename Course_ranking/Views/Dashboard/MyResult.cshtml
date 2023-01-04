@@ -1,0 +1,46 @@
+﻿
+
+@{
+    ViewData["Title"] = "MyResult";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="card" style="background-color:white">
+        @if (ViewBag.data != null)
+        { 
+        
+        <div class="row">
+    <div class="col-md-4">
+        Email
+    </div>
+    <div class="col-md-4">
+        @ViewBag.data.Email
+    </div>
+    
+</div>
+<div class="row">
+    <div class="col-md-4">
+        Language
+    </div>
+    <div class="col-md-4">
+        @ViewBag.data.Langage
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-4">
+        Score
+    </div>
+    <div class="col-md-4">
+        @ViewBag.data.Score
+    </div>
+
+</div>
+        }
+        else
+        {
+            <div class="">No Record found</div>
+        }
+</div>
+</div>

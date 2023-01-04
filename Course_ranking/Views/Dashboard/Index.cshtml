@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<form method="post" asp-action="Index" asp-controller="Dashboard" enctype="multipart/form-data">
+<div class="row">
+    <div class="card">
+        <div class="text-center">
+            <br />
+            <br />
+            <br />
+            <br />
+            <h3>Description</h3>
+            <h5>Your goal is to create a program that automatically add two different number.<br />
+            we will compare your file to ours make a score out of it    
+            </h5>
+     
+        </div>
+        <div class="col-md-6">
+            <label>Language</label>
+                <select name="fileType" class="form-control">
+                <option>Select language</option>
+                <option>C</option>
+                <option>Python</option>
+            </select>
+        </div>
+        <br />
+        <br />
+           
+            <div class="col-md-6">
+       
+            <input onchange="checkfile()" name="File" type="file" class="form-control" />
+               
+          
+        </div>
+        <br />
+        <div class="col-md-4">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+       <br />
+            @if (ViewBag.Data == null)
+            {
+                <div class="col-md-4 offset-md-6">
+                    <p class="btn btn-primary" id="btnval">not submitted</p>
+                </div>
+            }
+            else
+            {
+                <div class="col-md-4 offset-md-6">
+                    <p class="btn btn-primary" id="btnval">Scored</p>
+                </div>
+                <br />
+                <div class="col-md-4 offset-md-6">
+                    <a asp-controller="Dashboard" asp-action="MyResult" class="btn btn-primary">MY Result</a>
+                </div>
+            }        
+        <br />
+        <br />
+    </div>
+</div>
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script type="text/javascript">
+          function checkfile()
+        {
+            var filename = $('input[type=file]').val();
+        $("#btnval").html("awaiting correction");
+        setTimeout(() => { $("#btnval").html("scored"); }, 5000);
+    
+            //if(filename==null)
+            //{
+            //    wait(5000);
+                
+            //    checkfile();
+            //}
+            //else
+            //{
+            //    $("#btnval").html("awaiting correction");
+            //    wait(5000);
+            //    $("#btnval").html("scored");
+            //}
+        }
+        </script>

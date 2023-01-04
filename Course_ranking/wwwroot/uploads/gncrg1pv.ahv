@@ -1,0 +1,5 @@
+0008
+1008212244
+      <input class="col-3" type="checkbox" asp-for="WriteAccess[@i]" checked="@(ViewBag.accesright[i].WriteAccess == false)" />
+                                <input class="col-3" type="checkbox" asp-for="ReadWrite[@i]" value="@ViewBag.accesright[i].ReadWrite" checked="@ViewBag.accesright[i].ReadWrite" />
+               
